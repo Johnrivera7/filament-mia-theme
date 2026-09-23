@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-09-23
+
+### Fixed
+
+- Filament Action Modals (Create/Edit on resource list pages) no longer clip to
+  the content column. Two page-entry animation side effects were at play: a
+  leftover `transform` made `.fi-page` the containing block for
+  `position: fixed` (backdrop and tall windows clipped to the list area), and
+  `animation-fill-mode: both` left a stacking context so the overlay painted
+  under the sticky sidebar. Entry motion is now opacity-only with fill mode
+  `backwards`, plus an unlayered safety net that clears transform, drops the
+  page animation while a modal is open, and keeps open modal windows
+  viewport-fixed.
+
+### Changed
+
+- Modal close controls are a soft circular chip (hairline, sunken wash, accent
+  hover) instead of a bare X, so dismiss reads clearly on every Action Modal.
+
 ## [0.2.2] - 2026-09-09
 
 ### Changed
@@ -408,7 +427,9 @@ recompiling, and can differ between panels in one application.
   highest resolvable dependencies. The suite runs with `error_reporting=-1`
   and fails on any deprecation, notice or warning originating in the package.
 
-[Unreleased]: https://github.com/Johnrivera7/filament-mia-theme/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/Johnrivera7/filament-mia-theme/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/Johnrivera7/filament-mia-theme/compare/v0.2.2...v0.2.3
+[0.2.2]: https://github.com/Johnrivera7/filament-mia-theme/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/Johnrivera7/filament-mia-theme/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/Johnrivera7/filament-mia-theme/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Johnrivera7/filament-mia-theme/releases/tag/v0.1.0

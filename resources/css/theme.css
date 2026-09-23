@@ -48,6 +48,9 @@
 
 @import './motion.css' layer(components);
 
+/* Unlayered — must win over Filament's unlayered modal/position CSS. */
+@import './modal-viewport.css';
+
 /*
  * Filament's core stylesheet declares `source(none)`, which switches off
  * automatic content detection, so the files to scan have to be named. Without

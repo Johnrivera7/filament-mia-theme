@@ -7,28 +7,41 @@
  */
 
 /*
- * Page content fades and rises very slightly on entry. Applied to the content
- * container, never to lists or table rows: Livewire re-renders those on every
- * keystroke, filter and poll, and animating them makes the page appear to
- * rebuild itself while the user is working.
+ * Page content fades in on entry. Opacity only — a lingering `transform`
+ * (even translateY(0)) creates a containing block for `position: fixed`
+ * modals, so they scroll with the page and get clipped at the viewport.
+ *
+ * Fill mode is `backwards` (not `both`/`forwards`): keeping the animation
+ * fill after it ends leaves a stacking context on `.fi-page`, which traps
+ * Action Modal overlays under the sticky sidebar so the backdrop only
+ * appears to cover the content column — the failure mode in issue #4.
  */
 .fi-body .fi-main > .fi-page {
-    animation: mia-rise var(--mia-anim-duration, 520ms) var(--mia-ease, ease) both;
+    animation: mia-fade var(--mia-anim-duration, 520ms) var(--mia-ease, ease) backwards;
 }
 
 .fi-body .fi-simple-main {
-    animation: mia-rise var(--mia-anim-duration, 520ms) var(--mia-ease, ease) both;
+    animation: mia-fade var(--mia-anim-duration, 520ms) var(--mia-ease, ease) backwards;
 }
 
-@keyframes mia-rise {
+@keyframes mia-fade {
     from {
         opacity: 0;
-        transform: translateY(0.5rem);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+    }
+}
+
+/* Legacy name kept for any references / reduced-motion resets. */
+@keyframes mia-rise {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 

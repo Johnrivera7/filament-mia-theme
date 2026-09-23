@@ -1,0 +1,96 @@
+/*
+ * Unlayered overrides — must beat Filament's unlayered component CSS.
+ * Do NOT wrap these in @layer; layered rules lose to unlayered Filament CSS.
+ *
+ * Action Modals (Create/Edit on list pages, etc.) render inside `.fi-page`.
+ * Two page-shell problems clip them to the content column:
+ *
+ *  1. Any non-`none` `transform` on `.fi-page` (including a leftover
+ *     `translateY(0)` from an entry animation) makes it the containing block
+ *     for `position: fixed`.
+ *  2. An opacity entry animation that is still “filling” leaves a stacking
+ *     context on `.fi-page`, so the modal overlay paints under the sticky
+ *     sidebar and looks constrained to the list column.
+ *
+ * `motion.css` avoids both for the steady state; these rules are the safety
+ * net, including while a modal is open mid-entry-animation.
+ *
+ * Do not override Filament’s `1fr auto 1fr` / `align-content` on the window
+ * container: forcing `align-content: center` vertically centres a tall
+ * Create/Edit form and clips its header above the viewport.
+ */
+
+.fi-body .fi-main > .fi-page,
+.fi-body .fi-simple-main {
+    transform: none !important;
+}
+
+.fi-body:has(.fi-modal.fi-modal-open) .fi-main > .fi-page,
+.fi-body:has(.fi-modal.fi-modal-open) .fi-simple-main {
+    animation: none !important;
+    opacity: 1 !important;
+}
+
+.fi-body .fi-modal.fi-modal-open > .fi-modal-window-ctn {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    overflow-y: auto !important;
+    /* Above sticky sidebar (z-index 20) once freed from the page SC. */
+    z-index: 50 !important;
+}
+
+/*
+ * Close control — unlayered so it beats Filament’s bare icon-button CSS.
+ * Soft circular chip: hairline, sunken wash, accent hover. Applies to every
+ * Action Modal / slide-over that uses `.fi-modal-close-btn`.
+ */
+.fi-body .fi-modal-close-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--mia-ink-muted);
+    background-color: color-mix(in oklab, var(--mia-surface-sunken) 88%, transparent);
+    border: 1px solid var(--mia-hairline);
+    border-radius: 9999px;
+    box-shadow: inset 0 1px 0 color-mix(in oklab, white 55%, transparent);
+    transition:
+        background-color var(--mia-duration, 260ms) var(--mia-ease, ease),
+        border-color var(--mia-duration, 260ms) var(--mia-ease, ease),
+        color var(--mia-duration, 260ms) var(--mia-ease, ease),
+        box-shadow var(--mia-duration, 260ms) var(--mia-ease, ease),
+        transform var(--mia-duration, 260ms) var(--mia-ease, ease);
+}
+
+.dark .fi-body .fi-modal-close-btn,
+:where(.dark) .fi-body .fi-modal-close-btn {
+    background-color: color-mix(in oklab, var(--gray-800) 72%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in oklab, white 6%, transparent);
+}
+
+.fi-body .fi-modal-close-btn:hover {
+    color: var(--mia-ink);
+    background-color: var(--mia-accent-wash);
+    border-color: var(--mia-accent-line);
+    box-shadow: var(--mia-shadow-sm);
+    transform: translateY(-1px);
+}
+
+.fi-body .fi-modal-close-btn:focus-visible {
+    outline: 2px solid var(--primary-600);
+    outline-offset: 2px;
+}
+
+.fi-body .fi-modal-close-btn > .fi-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fi-body .fi-modal-close-btn:hover {
+        transform: none;
+    }
+}
+
+.fi-body .fi-modal-window--pdf-viewer {
+    max-height: calc(100dvh - 2rem) !important;
+}
