@@ -12,7 +12,7 @@ five sign-in layouts, an in-panel appearance page and an optional builder for<br
 the public page in front of it — over cream surfaces and serif headings,<br />
 shipped pre-compiled with no build step.
 
-[![Status](https://img.shields.io/badge/status-v0.x%20%C2%B7%20active%20development-D9A14E?style=flat-square&labelColor=3C3227)](#project-status)
+[![Status](https://img.shields.io/badge/status-v0.2%20%C2%B7%20stable-8A9A6B?style=flat-square&labelColor=3C3227)](#project-status)
 [![License](https://img.shields.io/badge/license-MIT-D9A14E?style=flat-square&labelColor=3C3227)](LICENSE.md)
 [![PHP](https://img.shields.io/badge/PHP-8.4%20%E2%80%93%208.5-777BB4?style=flat-square&labelColor=3C3227)](https://www.php.net)
 [![Laravel](https://img.shields.io/badge/Laravel-11%20%C2%B7%2012%20%C2%B7%2013-FF2D20?style=flat-square&labelColor=3C3227)](https://laravel.com)
@@ -226,19 +226,18 @@ layout rather than a diagram of one:
 
 ## Project status
 
-Mía is a young project in active development, currently in the `0.x` series.
+Mía is ready for production. It ships as a stable Packagist release in the
+`0.2` series: light and dark mode are finished, the configuration API is
+settled enough to build on, the stylesheet is pre-compiled, and the suite runs
+against PHP 8.4 and 8.5.
 
-What that means in practice. The theme is complete and usable: light and dark
-mode are both finished, the configuration API is stable enough to build on, the
-stylesheet ships pre-compiled and the suite runs against PHP 8.4 and 8.5.
-What it does not mean is a frozen surface. Until `1.0` the option names, the
-CSS custom properties and the set of restyled components may still change, and
-minor releases can carry breaking changes. Each one is listed in the
-[changelog](CHANGELOG.md).
+The version stays under `1.0` on purpose. Until then, option names, CSS custom
+properties and the set of restyled components may still evolve, and a minor
+release can carry a breaking change. Each one is listed in the
+[changelog](CHANGELOG.md). That is versioning honesty, not an unfinished theme.
 
-Iteration is frequent and feedback shapes it. If a component looks wrong in
-your panel, or a token you need is not exposed, open an issue — that is the
-fastest way to influence what lands next.
+If a component looks wrong in your panel, or a token you need is not exposed,
+open an issue.
 
 ## Requirements
 
@@ -1704,8 +1703,8 @@ Exporting a saved appearance back out as configuration, so a look tuned in one
 environment can be committed. Coverage for the Filament plugins that carry
 their own UI.
 
-Dates are not promised. The `0.x` series is where this gets worked out in the
-open; see [Project status](#project-status).
+Dates are not promised. The theme itself is already usable in production; see
+[Project status](#project-status).
 
 ## Changelog
 

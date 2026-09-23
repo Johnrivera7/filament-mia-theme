@@ -46,9 +46,9 @@ reconfiguring the theme never requires recompiling it.
 Contrast is measured, not assumed: every text and UI pair meets WCAG AA. The
 suite runs against PHP 8.4 and 8.5.
 
-Mía is a young project in active development, currently in the `0.x` series.
-The theme is complete and usable; the public surface may still change before
-`1.0`, and every change is listed in the changelog.
+Mía is ready for production and published as a stable Packagist release in the
+`0.2` series. The version stays under `1.0` so the public surface may still
+evolve; every change is listed in the changelog.
 
 ## Categories
 

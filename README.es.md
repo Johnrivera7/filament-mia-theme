@@ -13,7 +13,7 @@ y un constructor opcional para la página pública que lo precede, sobre<br />
 superficies crema y titulares en serif, distribuido precompilado y sin paso de<br />
 compilación.
 
-[![Estado](https://img.shields.io/badge/estado-v0.x%20%C2%B7%20desarrollo%20activo-D9A14E?style=flat-square&labelColor=3C3227)](#estado-del-proyecto)
+[![Estado](https://img.shields.io/badge/estado-v0.2%20%C2%B7%20estable-8A9A6B?style=flat-square&labelColor=3C3227)](#estado-del-proyecto)
 [![Licencia](https://img.shields.io/badge/licencia-MIT-D9A14E?style=flat-square&labelColor=3C3227)](LICENSE.md)
 [![PHP](https://img.shields.io/badge/PHP-8.4%20%E2%80%93%208.5-777BB4?style=flat-square&labelColor=3C3227)](https://www.php.net)
 [![Laravel](https://img.shields.io/badge/Laravel-11%20%C2%B7%2012%20%C2%B7%2013-FF2D20?style=flat-square&labelColor=3C3227)](https://laravel.com)
@@ -231,20 +231,19 @@ se previsualiza como el layout real y no como un esquema.
 
 ## Estado del proyecto
 
-Mía es un proyecto joven en desarrollo activo, hoy en la serie `0.x`.
+Mía está listo para producción. Se publica como release estable en Packagist
+en la serie `0.2`: los modos claro y oscuro están terminados, la API de
+configuración es lo bastante firme como para construir sobre ella, la hoja de
+estilos viene precompilada y la batería de pruebas corre contra PHP 8.4 y 8.5.
 
-Qué significa eso en la práctica. El tema está completo y es utilizable: los
-modos claro y oscuro están terminados, la API de configuración es lo bastante
-estable como para construir sobre ella, la hoja de estilos se distribuye
-precompilada y la batería de pruebas corre contra PHP 8.4 y 8.5. Lo que no
-significa es que la superficie esté congelada. Hasta la `1.0`, los nombres de
-las opciones, las propiedades CSS y el conjunto de componentes reestilizados
-pueden cambiar, y una versión menor puede traer cambios incompatibles. Cada uno
-queda anotado en el [registro de cambios](CHANGELOG.md).
+La versión se mantiene bajo `1.0` a propósito. Hasta entonces, los nombres de
+opciones, las propiedades CSS y el conjunto de componentes reestilizados pueden
+evolucionar, y una menor puede traer un cambio incompatible. Cada uno queda en
+el [registro de cambios](CHANGELOG.md). Eso es honestidad de versionado, no un
+tema a medias.
 
-La iteración es frecuente y la retroalimentación la orienta. Si un componente
-se ve mal en tu panel, o falta una variable que necesitas, abre una incidencia:
-es la vía más rápida para influir en lo que entra a continuación.
+Si un componente se ve mal en tu panel, o falta una variable que necesitas,
+abre una incidencia.
 
 ## Requisitos
 
@@ -1047,8 +1046,8 @@ propias que encajen con el panel. Exportar una apariencia guardada de vuelta a
 configuración, para poder versionar en el repositorio un ajuste hecho en un
 entorno. Cobertura para los plugins de Filament que traen su propia interfaz.
 
-No se prometen fechas. La serie `0.x` es donde esto se resuelve a la vista de
-todos; ver [Estado del proyecto](#estado-del-proyecto).
+No se prometen fechas. El tema en sí ya es usable en producción; ver
+[Estado del proyecto](#estado-del-proyecto).
 
 ## Licencia
 
