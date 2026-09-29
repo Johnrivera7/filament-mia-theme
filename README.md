@@ -1,21 +1,17 @@
 <div align="center">
 
-<img src="art/ascenso.png" alt="Una figura pequeña asciende en la oscuridad hacia una luz tenue" width="100%" />
+<img src="art/ascenso.png" alt="Una figura clara asciende en la oscuridad hacia un 7 luminoso" width="100%" />
 
 # Mía
 
-### En espera
-
 </div>
 
-Este proyecto queda en pausa.
+Se terminó.
 
-Se acabó la inspiración. Por motivos personales no pude convertirlo en la mejor versión de lo que quería hacer, y ahora no tengo ánimo de seguir.
+Se acabó la inspiración. Por motivos personales no pude convertirlo en la mejor versión de lo que quería hacer, y no tengo ánimo de seguir.
 
-El código no se borra. Está guardado aparte, en privado. Este repositorio público se queda así: en silencio, sin hoja de ruta y sin fecha de regreso.
-
-Si algún día vuelve, será desde aquí.
+A quienes les gustó este tema: lo siento. Gracias por mirarlo con cariño.
 
 ---
 
-This repository is on standby. The work is kept in private. Nothing here is being maintained for now.
+This project has ended. To anyone who liked the theme: I'm sorry.
